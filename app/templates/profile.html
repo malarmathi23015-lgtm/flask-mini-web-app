@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-md-6">
+
+        <div class="card
+                    bg-secondary
+                    text-light
+                    shadow-lg
+                    border-0">
+
+            <div class="card-body p-4">
+
+                <h2 class="mb-4 text-center">
+
+                    Profile
+
+                </h2>
+
+                <hr>
+
+                <div class="mb-3">
+
+                    <h5>Email</h5>
+
+                    <p class="text-warning">
+
+                        {{ current_user.email }}
+
+                    </p>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <h5>Total Notes</h5>
+
+                    <p class="text-warning">
+
+                        {{ total_notes }}
+
+                    </p>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <h5>Account ID</h5>
+
+                    <p class="text-warning">
+
+                        {{ current_user.id }}
+
+                    </p>
+
+                </div>
+
+                <hr>
+
+                <div class="d-grid">
+
+                    <a href="{{ url_for(
+                        'auth.dashboard'
+                    ) }}"
+                       class="btn btn-dark">
+
+                       Back To Dashboard
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

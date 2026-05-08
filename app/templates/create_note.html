@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-md-8">
+
+        <div class="card
+                    bg-secondary
+                    text-light
+                    shadow-lg
+                    border-0">
+
+            <div class="card-body p-4">
+
+                <h2 class="mb-4">
+
+                    Create Note
+
+                </h2>
+
+                <form method="POST">
+
+                    {{ form.hidden_tag() }}
+
+                    <!-- TITLE -->
+                    <div class="mb-3">
+
+                        {{ form.title.label(
+                            class="form-label"
+                        ) }}
+
+                        {{ form.title(
+                            class="form-control"
+                        ) }}
+
+                    </div>
+
+                    <!-- CONTENT -->
+                    <div class="mb-3">
+
+                        {{ form.content.label(
+                            class="form-label"
+                        ) }}
+
+                        {{ form.content(
+                            class="form-control",
+                            rows="10"
+                        ) }}
+
+                    </div>
+
+                    <!-- SUBMIT -->
+                    <div class="d-grid">
+
+                        {{ form.submit(
+                            class="btn btn-success"
+                        ) }}
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

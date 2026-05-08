@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between
+            align-items-center mb-4">
+
+    <h1>
+
+        Dashboard
+
+    </h1>
+
+    <a href="{{ url_for('auth.create_note') }}"
+       class="btn btn-success">
+
+       + Create Note
+
+    </a>
+
+</div>
+
+
+<!-- SEARCH -->
+<form method="GET" class="mb-4">
+
+    <input type="text"
+           name="search"
+           class="form-control"
+           placeholder="Search notes...">
+
+</form>
+
+
+<!-- NOTES -->
+<div class="row">
+
+{% if notes %}
+
+    {% for note in notes %}
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card
+                        bg-secondary
+                        text-light
+                        shadow-lg
+                        border-0
+                        h-100">
+
+                <div class="card-body d-flex flex-column">
+
+                    <h4 class="card-title">
+
+                        {{ note.title }}
+
+                    </h4>
+
+                    <p class="card-text">
+
+                        {{ note.content[:120] }}...
+
+                    </p>
+
+                    <small class="text-warning mb-3">
+
+                        {{ note.created_at.strftime(
+                            '%d %b %Y'
+                        ) }}
+
+                    </small>
+
+                    <div class="mt-auto">
+
+                        <a href="{{ url_for(
+                            'auth.view_note',
+                            note_id=note.id
+                        ) }}"
+                           class="btn btn-dark btn-sm">
+
+                           View
+
+                        </a>
+
+                        <a href="{{ url_for(
+                            'auth.edit_note',
+                            note_id=note.id
+                        ) }}"
+                           class="btn btn-warning btn-sm">
+
+                           Edit
+
+                        </a>
+
+                        <a href="{{ url_for(
+                            'auth.delete_note',
+                            note_id=note.id
+                        ) }}"
+                           class="btn btn-danger btn-sm"
+
+                           onclick="
+                           return confirm(
+                           'Delete this note?'
+                           )">
+
+                           Delete
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <div class="text-center mt-5">
+
+        <h3>
+
+            No Notes Found
+
+        </h3>
+
+        <p>
+
+            Create your first note now.
+
+        </p>
+
+    </div>
+
+{% endif %}
+
+</div>
+
+{% endblock %}
