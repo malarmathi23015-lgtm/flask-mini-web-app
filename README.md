@@ -66,9 +66,10 @@ This project includes user authentication, password hashing, CRUD note managemen
 
 ---
 
-📁 Project Structure
+# 📁 Project Structure
 
-secure-notes/
+```text
+secure_notes/
 │
 ├── app/
 │   ├── static/
@@ -101,57 +102,65 @@ secure-notes/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-
-⚙️ Installation & Setup
-1️⃣ Clone Repository
+'''
+## ⚙️ Installation
+Clone Repository
 git clone https://github.com/YOUR_USERNAME/secure-notes-flask.git
 
-2️⃣ Navigate to Project
+Navigate Into Project
 cd secure-notes-flask
 
-3️⃣ Create Virtual Environment
+Create Virtual Environment
 python -m venv venv
 
-4️⃣ Activate Virtual Environment
+Activate Virtual Environment
 Linux / macOS
 source venv/bin/activate
 
 Windows
-venv\Scripts\activate
+venv\\Scripts\\activate
 
-5️⃣ Install Dependencies
+Install Requirements
 pip install -r requirements.txt
+
 🗄 Database Setup
+Initialize Migration
 flask db init
+Create Migration
 flask db migrate -m "Initial migration"
+Apply Migration
 flask db upgrade
 
 ▶️ Run Application
 flask --app run.py --debug run
 
-Open in browser:
+Application runs on:
 http://127.0.0.1:5000
 
 🔮 Future Improvements
 Rich Text Editor
 Markdown Support
+Note Categories
 Public/Private Notes
 Email Verification
-Password Reset System
-REST API Integration
+Password Reset
+REST API
 Docker Deployment
 
 📚 Learning Outcomes
+
 This project demonstrates:
-      Flask Authentication Flow
-      SQLAlchemy ORM Design
-      Secure Password Handling
-      Flask-WTF Forms
-      CRUD Operations
-      Session Management
-      Modular Flask Architecture
-      Responsive UI Design
+
+Flask Authentication
+Flask Application Structure
+SQLAlchemy ORM
+Flask-WTF Forms
+Database Relationships
+CRUD Operations
+Session Management
+Secure Password Handling
+Responsive UI Design
 
 👨‍💻 Author
 
-Developed by: Mathivadhana V
+Developed by Mathivadhana V give this atfer installation ggive out project structure
